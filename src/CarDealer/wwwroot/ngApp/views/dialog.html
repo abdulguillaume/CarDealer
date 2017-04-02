@@ -1,0 +1,27 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Selected car information:</h3>
+</div>
+<div class="modal-body" ng-cloak>
+    <table class="table">
+        <tr>
+            <th>Make</th>
+            <td>{{modal.make}}</td>
+        </tr>
+        <tr>
+            <th>Full Description</th>
+            <td>{{modal.car.fullDescription}}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>{{modal.car.price|currency}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="../../images/giphy_loading.gif" ng-src="{{modal.car.imageUrl}}" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="modal.ok()">OK</button>
+</div>

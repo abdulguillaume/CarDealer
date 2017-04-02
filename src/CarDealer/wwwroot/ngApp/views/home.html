@@ -1,0 +1,23 @@
+
+<h2>Home</h2>
+<ul>
+    <li ng-repeat="car in controller.cars">
+        <table  class="table" border="1">
+            <tr>
+                <td>
+                    <strong ng-repeat="make in controller.makes|filter:{id: car.carMakeId}">{{make.name}}</strong>
+                </td>
+            </tr> 
+            <tr>
+                <td>{{car.shortDescription}}</td>
+            </tr>
+            <tr>
+                <td>{{car.price|currency}}</td>
+            </tr>
+            <tr>
+                <td><a href="#" ng-click="controller.showModal(car.id)">See full details</a></td>
+            </tr>
+        </table><br />
+    </li>
+</ul>
+
