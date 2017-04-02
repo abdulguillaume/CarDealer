@@ -1,9 +1,10 @@
 namespace CarDealer.Controllers {
 
     export class HomeController {
-        public message = 'Hello from the home page!';
+        //public message = 'Hello from the home page!';
         public cars;
         public makes; //for later
+        public selectedMake = 0;
 
         constructor(private carService: CarDealer.Services.CarService, private makeService: CarDealer.Services.MakeService, private $uibModal: angular.ui.bootstrap.IModalService) {
             this.cars = carService.listCars();
@@ -11,12 +12,20 @@ namespace CarDealer.Controllers {
 
         }
 
+        public getCars() {
+            if (this.selectedMake == 0)
+                return this.cars
+            else
+                return this.cars.filter(x => x.carMakeId == this.selectedMake);
+        }
+
         public showModal(carId: number) {
 
             let car = this.cars.find(x => x.id == carId);
             let make = this.makes.find(x => x.id == car.carMakeId);
 
-            console.log(make);
+            //console.log(make);
+
             this.$uibModal.open({
                 templateUrl: '/ngApp/views/dialog.html',
                 controller: 'DialogController',

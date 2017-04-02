@@ -1,7 +1,18 @@
 
-<h2>Home</h2>
-<ul>
-    <li ng-repeat="car in controller.cars">
+<label>Select a car make: </label>
+
+<select ng-model="controller.selectedMake" ng-init="controller.selectedMake='0'">
+    <option value="0" selected>
+        --All Makes--
+    </option>
+    <option ng-repeat="make in controller.makes" value="{{make.id}}">
+        {{make.name}}
+    </option> 
+</select>
+
+<hr />
+<ol>
+    <li ng-repeat="car in controller.getCars()">
         <table  class="table" border="1">
             <tr>
                 <td>
@@ -19,5 +30,5 @@
             </tr>
         </table><br />
     </li>
-</ul>
+</ol>
 
