@@ -1,34 +1,32 @@
+<!DOCTYPE html>
 <html ng-app="CarDealer">
 <head>
-    <title>CarDealer</title>
+    <meta charset="utf-8">
+    <title>Car Dealership</title>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
     <base href="/" />
-    <style>
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-          display: none !important;
-        }
 
-        img{
-      /*background-image: url('../../wwwroot/images/giphy_loading.gif') ;*/
-      max-width: 100%;
-      min-width:200px;
-      min-height:200px;
-    }
-    </style>
 </head>
 <body >
+    
     <div class="container">
-        <h1>CarDealer</h1>
-        <div>
-          <a href="/">Home</a> /
-           <a href="/about">About</a>
-
-        </div>
+        <nav>
+            <img id="banner" src="~/images/banner_car_dealer.jpg" />
+            <div id="menu">
+                <a href="/">Home</a> /
+                <a href="/search">Search</a>
+            </div>
+        </nav>
+        
         <hr />
 
         <ui-view></ui-view>
     </div>
+
+
+    <img style="display:none" src="~/images/giphy_loading.gif" />
 
     <!-- Library Files -->
     <script src="/bower_components/angular/angular.js"></script>

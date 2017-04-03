@@ -1,0 +1,24 @@
+﻿        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+
+        img{
+      /*background-image: url('../../wwwroot/images/giphy_loading.gif') ;*/
+      max-width: 100%;
+      min-width:200px;
+      min-height:200px;
+    }
+
+        #banner {
+            text-align: center;
+        }
+
+        #menu {
+            position: absolute;
+            top: 175px;
+        }
+
+        a:hover{
+          color: darkgreen;
+          text-decoration: none;
+        }

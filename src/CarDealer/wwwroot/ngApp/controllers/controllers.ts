@@ -20,6 +20,7 @@ namespace CarDealer.Controllers {
         }
 
         public showModal(carId) {
+            
             showModalUI(carId, this.$uibModal, this.cars, this.makes)
         }
         //public showModal(carId: number) {
@@ -58,6 +59,14 @@ namespace CarDealer.Controllers {
 
     angular.module('CarDealer').controller('DialogController', DialogController);
 
+    //one error was bugging me, i did some research on stackoverflow
+    //http://stackoverflow.com/questions/41063947/angular-1-6-0-possibly-unhandled-rejection-error
+    //each time i click outside the modal ui, there were one error message in the console log stating:
+    //'Possibly unhandled rejection: backdrop click
+    //the below piece of code fixes it.
+    angular.module('CarDealer').config(['$qProvider', function ($qProvider) {
+        $qProvider.errorOnUnhandledRejections(false);
+    }]);
 
     const apiUrl = '/api/cars/search/';
 

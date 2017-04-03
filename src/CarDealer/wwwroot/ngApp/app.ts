@@ -13,9 +13,9 @@ namespace CarDealer {
                 controller: CarDealer.Controllers.HomeController,
                 controllerAs: 'controller'
             })
-            .state('about', {
-                url: '/about',
-                templateUrl: '/ngApp/views/about.html',
+            .state('search', {
+                url: '/search',
+                templateUrl: '/ngApp/views/search.html',
                 controller: CarDealer.Controllers.AboutController,
                 controllerAs: 'controller'
             })

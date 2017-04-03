@@ -20,9 +20,9 @@ namespace CarDealer.Services {
             return this.CarResource.query();
         }
 
-        //public getCar(id){
-        //    return this.CarResource.get({ id: id });
-        //}
+        public getCar(id){
+            return this.CarResource.get({ id: id });
+        }
 
         constructor($resource: ng.resource.IResourceService) {
             this.CarResource = $resource('/api/cars/:id');
@@ -49,4 +49,5 @@ namespace CarDealer.Services {
     }
 
     angular.module('CarDealer').service('makeService', MakeService);
+
     }
