@@ -1,4 +1,28 @@
-<h2>About</h2>
-<p>
-    {{controller.message}}
-</p>
+<label>Search for a car: </label>
+<input type="text" ng-model="controller.search" 
+       ng-model-options="{debounce:1000}" 
+       ng-change="controller.fetch()"
+       required/>
+
+<hr />
+
+<ol>
+    <li ng-repeat="car in controller.cars">
+        <table class="table" border="1">
+            <tr>
+                <td>
+                    <strong ng-repeat="make in controller.makes|filter:{id: car.carMakeId}">{{make.name}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>{{car.shortDescription}}</td>
+            </tr>
+            <tr>
+                <td>{{car.price|currency}}</td>
+            </tr>
+            <tr>
+                <td><a href="#" ng-click="controller.showModal(car.id)">See full details</a></td>
+            </tr>
+        </table><br />
+    </li>
+</ol>

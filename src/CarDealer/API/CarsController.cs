@@ -20,19 +20,25 @@ namespace CarDealer.API
             _carService = carService;
         }
 
-        // GET: api/values
+        // GET: api/cars
         [HttpGet]
         public IEnumerable<Car> Get()
         {
             return _carService.ListCars();
         }
 
-        // GET api/values/5
+        // GET api/cars/5
         [HttpGet("{id}")]
         public Car Get(int id)
         {
             return _carService.FindCar(id);
         }
 
+        // GET: api/cars
+        [HttpGet("search/{searchText}")]
+        public IEnumerable<Car> Get(string searchText)
+        {
+            return _carService.SearchCars(searchText);
+        }
     }
 }

@@ -80,5 +80,12 @@ namespace CarDealer.Services
         {
             return _cars.Find(c => c.Id == id);
         }
+
+        public IList<Car> SearchCars(string searchText)
+        {
+            return _cars
+             .Where(m => m.ShortDescription.ToLower().Contains(searchText.ToLower()))
+             .ToList();
+        }
     }
 }
